@@ -1,0 +1,73 @@
+{
+  "name": "ecommerce-testing",
+  "version": "1.0.0",
+  "private": true,
+  "description": "testing",
+  "homepage": "",
+  "author": "",
+  "license": "UNLICENSED",
+  "scripts": {
+    "xdn": "xdn",
+    "next": "next",
+    "start": "SERVICE_WORKER=true xdn run --cache",
+    "build": "xdn build",
+    "prod": "xdn run --production",
+    "test": "jest",
+    "deploy": "xdn deploy react-storefront",
+    "prettier": "prettier --write \"**/*.js\" \"!{node_modules,.xdn,.next,.yalc}/**\"",
+    "rsf:link": "rm -rf node_modules/react-storefront node_modules/react-storefront-analytics node_modules/react-storefront-amp && yalc add react-storefront react-storefront-analytics react-storefront-amp && npm i --prefer-offline",
+    "xdn:link": "rm -rf node_modules/@xdn/core node_modules/@xdn/next && yalc add @xdn/next @xdn/core @xdn/cli @xdn/prefetch",
+    "rsf:update": "npm i --save react-storefront@latest react-storefront-amp@latest react-storefront-analytics@latest",
+    "xdn:update": "npm i --save @xdn/core@latest @xdn/next@latest @xdn/cli@latest @xdn/prefetch@latest",
+    "reinstall": "rm -rf node_modules && npm i --prefer-offline"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yalc remove --all && lint-staged"
+    }
+  },
+  "dependencies": {
+    "@material-ui/core": "4.5.2",
+    "@material-ui/icons": "4.5.1",
+    "@material-ui/lab": "^4.0.0-alpha.35",
+    "@material-ui/styles": "4.5.2",
+    "@svgr/webpack": "^4.3.3",
+    "clsx": "^1.0.4",
+    "cross-env": "^5.2.0",
+    "isomorphic-unfetch": "^3.0.0",
+    "lorem-ipsum": "^2.0.3",
+    "next": "^10.0.1",
+    "preact": "^10.4.4",
+    "preact-render-to-string": "^5.1.8",
+    "preact-ssr-prepass": "^1.0.1",
+    "qs": "^6.9.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-storefront": "^8.17.2",
+    "react-storefront-amp": "^1.2.9",
+    "react-storefront-analytics": "^1.1.2",
+    "typeface-roboto": "0.0.75"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.1",
+    "@babel/helper-function-name": "^7.10.1",
+    "@babel/helper-split-export-declaration": "^7.10.1",
+    "@xdn/cli": "^2.30.1",
+    "@xdn/core": "^2.30.1",
+    "@xdn/devtools": "^2.30.1",
+    "@xdn/next": "^2.30.1",
+    "@xdn/prefetch": "^2.30.1",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-transform-imports": "^2.0.0",
+    "dotenv": "^8.2.0",
+    "husky": "^4.0.0",
+    "lint-staged": "^10.0.9",
+    "prettier": "^1.19.1",
+    "webpack": "^4.0.0"
+  },
+  "lint-staged": {
+    "*.js": [
+      "npm run prettier"
+    ]
+  }
+}
