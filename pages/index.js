@@ -43,10 +43,8 @@ export default function Index(lazyProps) {
         <Grid item xs={12}>
 
           <Carousel
-            indicators={Boolean('Indicators', true)}
-            autoplay={Boolean('Autoplay')}
-            interval={Number('Interval', 1000)}
-            arrows={select('Arrows', { None: false, Desktop: 'desktop', All: 'all' }, 'all')}
+            indicators={true}
+            arrows={{ None: false, Desktop: 'desktop', All: 'all' }}
           >
             {imgs.map((image, i) => (
               <img width="100%" src={image} alt={`image-${i}`} />
