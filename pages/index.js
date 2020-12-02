@@ -47,7 +47,7 @@ export default function Index(lazyProps) {
             arrows={{ None: false, Desktop: 'desktop', All: 'all' }}
           >
             {imgs.map((image, i) => (
-              <img width="100%" src={image} alt={`image-${i}`} />
+              <img key={`image-index-${i}`} width="100%" src={image} alt={`image-${i}`} />
             ))}
           </Carousel>
         </Grid>
