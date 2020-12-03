@@ -7,7 +7,7 @@ export default async function pdp(req, res) {
       title: rawResult.title, // the document title
       product: {
         // info for the product.  You can add to this as needed.
-        id: rawResult.id, // the product id
+        id: rawResult.id.toString(), // the product id
         url: `/p/${rawResult.id}`, // the URL for the product page
         name: rawResult.title, // the name of the product
         price: Number(rawResult.price), // the price as a number

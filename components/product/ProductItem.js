@@ -17,6 +17,8 @@ const useStyles = makeStyles(theme => ({
   },
   thumbnail: {
     marginBottom: theme.spacing(1),
+    height:300,
+    width: 250
   },
   link: {
     textDecoration: 'none',
@@ -33,6 +35,7 @@ const useStyles = makeStyles(theme => ({
   },
   info: {
     margin: '0',
+    width: 250
   },
 }))
 
@@ -69,7 +72,7 @@ function ProductItem({ product, index, classes, className, colorSelector }) {
             </Track>
           </ForwardThumbnail>
           <div className={classes.info}>
-            <Typography variant="subtitle1" className={classes.name}>
+            <Typography variant="subtitle1" className={classes.name} noWrap title={product.name}>
               {product.name}
             </Typography>
             {colorSelector && (
