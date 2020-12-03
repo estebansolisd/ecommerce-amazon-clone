@@ -3,7 +3,6 @@ import { makeStyles } from '@material-ui/core/styles'
 import AppBar from 'react-storefront-amp/AmpAppBar'
 import CartButton from 'react-storefront/CartButton'
 import Search from './search/Search'
-import Logo from '../components/assets/react-storefront-logo.svg'
 import { Container } from '@material-ui/core'
 import Menu from 'react-storefront-amp/menu/AmpMenu'
 import MenuButton from 'react-storefront/menu/MenuButton'
@@ -14,6 +13,22 @@ import LazyHydrate from 'react-storefront/LazyHydrate'
 
 const useStyles = makeStyles(theme => ({
   title: {},
+  logoPrincipal: {
+    width: 120,
+    height: 48,
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center center",
+    background: "url(https://gulfbeachweddings.com/wp-content/uploads/2018/05/Amazon.jpeg)",
+    position: 'absolute',
+    left: 10,
+    top: 0,
+    [theme.breakpoints.down('xs')]: {
+      left: '50%',
+      top: 6,
+      marginLeft: -60,
+    },
+  },
   logo: {
     position: 'absolute',
     left: 10,
@@ -62,8 +77,7 @@ export default function Header({ menu }) {
       <AppBar>
         <Container maxWidth="lg" className={classes.container}>
           <Link href="/">
-            <a aria-label="logo">
-              <Logo style={{ width: 120, height: 48 }} className={classes.logo} />
+            <a aria-label="logo" className={classes.logoPrincipal}>
             </a>
           </Link>
           <Search />
