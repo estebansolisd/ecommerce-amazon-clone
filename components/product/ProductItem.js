@@ -17,8 +17,8 @@ const useStyles = makeStyles(theme => ({
   },
   thumbnail: {
     marginBottom: theme.spacing(1),
-    height:300,
-    width: 250
+    // minHeight:300,
+    // minWidth: 250
   },
   link: {
     textDecoration: 'none',
